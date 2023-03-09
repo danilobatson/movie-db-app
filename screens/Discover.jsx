@@ -76,6 +76,7 @@ export default function Discover({ navigation, route }) {
   //Creates array of genres
   const genresList = (genreIds) => {
     const genreNames = genreIds.map((id) => {
+      if(genres.current.length === 0) return null
       const genre = genres.current.find((genre) => genre.id === id)
       if (genre.name) {
         return genre.name
